@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <issue id="ExtraTranslation" severity="warning" />
+    <issue id="MissingTranslation" severity="warning" />
+    <issue id="StringFormatInvalid" severity="warning" />
+    <issue id="StringFormatMatches" severity="warning" />
+</lint>
