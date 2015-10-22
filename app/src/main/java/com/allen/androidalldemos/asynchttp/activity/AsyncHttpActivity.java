@@ -2,6 +2,8 @@ package com.allen.androidalldemos.asynchttp.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -17,7 +19,7 @@ import cz.msebera.android.httpclient.Header;
 /**
  * Created by allen on 2015/10/20.
  */
-public class AsyncHttpActivity extends Activity {
+public class AsyncHttpActivity extends AppCompatActivity {
     private AsyncHttpClient asyncHttpClient;
     private Button sendHttpBtn;
     private TextView showHttpResponseTv;
@@ -35,6 +37,20 @@ public class AsyncHttpActivity extends Activity {
             @Override
             public void onClick(View v) {
                 sendHttp();
+            }
+        });
+        initToolbar();
+    }
+
+    private void initToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("异步网络数据请求");
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.mipmap.titlebar_leftarrow_back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
@@ -61,8 +77,8 @@ public class AsyncHttpActivity extends Activity {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                String response = new String(responseBody);
-                showHttpResponseTv.setText(response);
+//                String response = new String(responseBody);
+                showHttpResponseTv.setText(error.getMessage());
                 ToastUtils.showShort(AsyncHttpActivity.this, "请求失败");
             }
 

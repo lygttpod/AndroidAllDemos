@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/apptoolbar_layout"
+        layout="@layout/app_toolbar"></include>
+
+    <com.allen.androidalldemos.bannerpager.view.BannerPager
+        android:id="@+id/bannerpager"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@+id/apptoolbar_layout"></com.allen.androidalldemos.bannerpager.view.BannerPager>
+
+    <LinearLayout
+        android:id="@+id/bannerpager_ll_adtip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bannerpager"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"></LinearLayout>
+</RelativeLayout>

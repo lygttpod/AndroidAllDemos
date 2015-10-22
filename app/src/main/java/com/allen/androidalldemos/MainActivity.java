@@ -17,6 +17,9 @@ import android.widget.AdapterView;
 
 import com.allen.androidalldemos.adapter.ListViewAdapter;
 import com.allen.androidalldemos.asynchttp.activity.AsyncHttpActivity;
+import com.allen.androidalldemos.bannerpager.activity.BannerPagerActivity;
+import com.allen.androidalldemos.imageloader.ImageLoaderActivity;
+import com.allen.androidalldemos.sharesdk.ShareActivity;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import java.util.ArrayList;
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity
     private PullToRefreshListView pullToRefreshListView;
     private ListViewAdapter listViewAdapter;
     private List<String> list;
+    private List<String> listurl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,18 +63,20 @@ public class MainActivity extends AppCompatActivity
 
     private void initlistDate() {
         list = new ArrayList<>();
+        listurl = new ArrayList<>();
 
         list.add("异步网络请求(android-async-http)");
         list.add("图片异步加载(universal-image-loader)");
-        list.add("下拉刷新(PullToRefreshListView)");
+        list.add("分享功能(shareSDK)");
         list.add("高性能数据库(greendao)");
+        list.add("广告页滑动(bannerpager)");
 
     }
 
     private void initListView() {
         initlistDate();
         pullToRefreshListView = (PullToRefreshListView) findViewById(R.id.listview);
-        listViewAdapter = new ListViewAdapter(this, list);
+        listViewAdapter = new ListViewAdapter(this, list, listurl);
         pullToRefreshListView.setAdapter(listViewAdapter);
         pullToRefreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -82,8 +88,18 @@ public class MainActivity extends AppCompatActivity
                         startActivity(intent);
                         break;
                     case 2:
+                        intent.setClass(MainActivity.this, ImageLoaderActivity.class);
+                        startActivity(intent);
                         break;
                     case 3:
+                        intent.setClass(MainActivity.this, ShareActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        intent.setClass(MainActivity.this, BannerPagerActivity.class);
+                        startActivity(intent);
                         break;
                 }
 
