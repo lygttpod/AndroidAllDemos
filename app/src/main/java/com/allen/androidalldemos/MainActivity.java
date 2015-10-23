@@ -1,5 +1,6 @@
 package com.allen.androidalldemos;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,8 +19,12 @@ import android.widget.AdapterView;
 import com.allen.androidalldemos.adapter.ListViewAdapter;
 import com.allen.androidalldemos.asynchttp.activity.AsyncHttpActivity;
 import com.allen.androidalldemos.bannerpager.activity.BannerPagerActivity;
+import com.allen.androidalldemos.gesturelockpsd.activity.LoginActivity;
+import com.allen.androidalldemos.gesturelockpsd.gesture.activity.GestureVerifyActivity;
 import com.allen.androidalldemos.imageloader.ImageLoaderActivity;
 import com.allen.androidalldemos.sharesdk.ShareActivity;
+import com.allen.androidalldemos.utils.SPUtils;
+import com.allen.androidalldemos.utils.StringUtil;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import java.util.ArrayList;
@@ -33,10 +38,12 @@ public class MainActivity extends AppCompatActivity
     private List<String> list;
     private List<String> listurl;
 
+    private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        context = this;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -68,7 +75,7 @@ public class MainActivity extends AppCompatActivity
         list.add("异步网络请求(android-async-http)");
         list.add("图片异步加载(universal-image-loader)");
         list.add("分享功能(shareSDK)");
-        list.add("高性能数据库(greendao)");
+        list.add("手势密码解锁(Gesture_LockPsd)");
         list.add("广告页滑动(bannerpager)");
 
     }
@@ -96,6 +103,14 @@ public class MainActivity extends AppCompatActivity
                         startActivity(intent);
                         break;
                     case 4:
+                        String getGpsd = SPUtils.get(context, "gesturePsd", "").toString();
+                        if (StringUtil.isNotEmpty(getGpsd)){
+                            intent.setClass(context, GestureVerifyActivity.class);
+                            startActivity(intent);
+                        }else {
+                            intent.setClass(context, LoginActivity.class);
+                            startActivity(intent);
+                        }
                         break;
                     case 5:
                         intent.setClass(MainActivity.this, BannerPagerActivity.class);

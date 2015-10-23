@@ -36,6 +36,10 @@
         <activity android:name=".imageloader.ImageLoaderActivity"></activity>
         <activity android:name=".bannerpager.activity.BannerPagerActivity"></activity>
         <activity android:name=".sharesdk.ShareActivity"></activity>
+        <activity android:name=".gesturelockpsd.activity.LoginActivity"></activity>
+        <activity android:name=".gesturelockpsd.gesture.activity.GestureEditActivity"></activity>
+        <activity android:name=".gesturelockpsd.gesture.activity.GestureVerifyActivity"></activity>
+
         <!--sharesdk需要的 -->
         <activity
             android:name="com.mob.tools.MobUIShell"
