@@ -22,6 +22,7 @@ import com.allen.androidalldemos.bannerpager.activity.BannerPagerActivity;
 import com.allen.androidalldemos.gesturelockpsd.activity.LoginActivity;
 import com.allen.androidalldemos.gesturelockpsd.gesture.activity.GestureVerifyActivity;
 import com.allen.androidalldemos.imageloader.ImageLoaderActivity;
+import com.allen.androidalldemos.navigation.activity.NavigationActivity;
 import com.allen.androidalldemos.sharesdk.ShareActivity;
 import com.allen.androidalldemos.utils.SPUtils;
 import com.allen.androidalldemos.utils.StringUtil;
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity
         list.add("分享功能(shareSDK)");
         list.add("手势密码解锁(Gesture_LockPsd)");
         list.add("广告页滑动(bannerpager)");
+        list.add("仿新闻导航菜单(tab+viewpager)");
 
     }
 
@@ -114,6 +116,10 @@ public class MainActivity extends AppCompatActivity
                         break;
                     case 5:
                         intent.setClass(MainActivity.this, BannerPagerActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 6:
+                        intent.setClass(MainActivity.this, NavigationActivity.class);
                         startActivity(intent);
                         break;
                 }

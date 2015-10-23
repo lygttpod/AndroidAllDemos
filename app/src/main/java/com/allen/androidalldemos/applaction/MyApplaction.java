@@ -3,6 +3,7 @@ package com.allen.androidalldemos.applaction;
 import android.app.Application;
 import android.content.Context;
 
+import com.allen.androidalldemos.utils.GreenDaoUtils;
 import com.nostra13.universalimageloader.cache.disc.DiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.UsingFreqLimitedMemoryCache;
@@ -18,9 +19,22 @@ import java.io.File;
  * Created by allen on 2015/10/21.
  */
 public class MyApplaction extends Application {
+
+    GreenDaoUtils greenDaoUtils;
+
+    public GreenDaoUtils getGreenDaoUtils() {
+        return greenDaoUtils;
+    }
+
+    public void setGreenDaoUtils(GreenDaoUtils greenDaoUtils) {
+        this.greenDaoUtils = greenDaoUtils;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
+        greenDaoUtils = new GreenDaoUtils(getApplicationContext());
+        setGreenDaoUtils(greenDaoUtils);
         initImageLoader(getApplicationContext());
     }
 

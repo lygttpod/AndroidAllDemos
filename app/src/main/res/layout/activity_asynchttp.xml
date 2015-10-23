@@ -9,6 +9,20 @@
         android:id="@+id/apptoolbar_layout"
         layout="@layout/app_toolbar"></include>
 
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/sendHttp_btn"
+        android:layout_below="@+id/apptoolbar_layout">
+
+        <TextView
+            android:id="@+id/show_httpresponse_TV"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </ScrollView>
 
     <Button
         android:id="@+id/sendHttp_btn"
@@ -19,13 +33,6 @@
         android:layout_alignParentStart="true"
         android:text="发送异步请求" />
 
-    <TextView
-        android:id="@+id/show_httpresponse_TV"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/apptoolbar_layout" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -35,4 +42,6 @@
         android:layout_centerVertical="true"
         android:layout_gravity="center_horizontal"
         android:visibility="gone" />
+
+
 </RelativeLayout>
