@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.HorizontalScrollView;
@@ -17,9 +16,8 @@ import com.allen.androidalldemos.R;
 import com.allen.androidalldemos.applaction.MyApplaction;
 import com.allen.androidalldemos.navigation.adapter.MyFragmentAdapter;
 import com.allen.androidalldemos.navigation.fragment.TestFragment;
-import com.allen.androidalldemos.navigation.utils.NavigationUtils;
+import com.allen.androidalldemos.navigation.tools.NavigationUtils;
 import com.allen.androidalldemos.utils.GreenDaoUtils;
-import com.allen.androidalldemos.utils.LogUtil;
 import com.allen.androidalldemos.utils.db.greenrobot.gen.ChannelItem;
 
 import java.util.ArrayList;
