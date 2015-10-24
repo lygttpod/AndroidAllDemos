@@ -1,16 +1,12 @@
 package com.allen.androidalldemos.imageloader;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.AdapterView;
 
-import com.allen.androidalldemos.MainActivity;
 import com.allen.androidalldemos.R;
 import com.allen.androidalldemos.adapter.ListViewAdapter;
-import com.allen.androidalldemos.asynchttp.activity.AsyncHttpActivity;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import java.util.ArrayList;

@@ -16,6 +16,8 @@
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name=".applaction.MyApplaction"
         android:allowBackup="true"
@@ -42,6 +44,9 @@
         <activity android:name=".gesturelockpsd.gesture.activity.GestureVerifyActivity"></activity>
         <activity android:name=".navigation.activity.NavigationActivity"></activity>
         <activity android:name=".navigation.activity.ChannelActivity"></activity>
+        <activity android:name=".sweetalertdialog.activity.SweetAlertDialogActivity"></activity>
+        <activity android:name=".actionsheetdialog.activity.ActionSheetDialogActivity"></activity>
+        <activity android:name=".qrcode.activity.QrCodeActivity"></activity>
 
         <!--sharesdk需要的 -->
         <activity

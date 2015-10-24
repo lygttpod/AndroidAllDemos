@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 
+import com.allen.androidalldemos.actionsheetdialog.activity.ActionSheetDialogActivity;
 import com.allen.androidalldemos.adapter.ListViewAdapter;
 import com.allen.androidalldemos.asynchttp.activity.AsyncHttpActivity;
 import com.allen.androidalldemos.bannerpager.activity.BannerPagerActivity;
@@ -23,7 +24,9 @@ import com.allen.androidalldemos.gesturelockpsd.activity.LoginActivity;
 import com.allen.androidalldemos.gesturelockpsd.gesture.activity.GestureVerifyActivity;
 import com.allen.androidalldemos.imageloader.ImageLoaderActivity;
 import com.allen.androidalldemos.navigation.activity.NavigationActivity;
+import com.allen.androidalldemos.qrcode.activity.QrCodeActivity;
 import com.allen.androidalldemos.sharesdk.ShareActivity;
+import com.allen.androidalldemos.sweetalertdialog.activity.SweetAlertDialogActivity;
 import com.allen.androidalldemos.utils.SPUtils;
 import com.allen.androidalldemos.utils.StringUtil;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity
     private List<String> listurl;
 
     private Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +83,9 @@ public class MainActivity extends AppCompatActivity
         list.add("手势密码解锁(Gesture_LockPsd)");
         list.add("广告页滑动(bannerpager)");
         list.add("仿新闻导航菜单(tab+viewpager)");
+        list.add("弹出框(dialog)");
+        list.add("仿iOS选择框(actionsheetdialog)");
+        list.add("二维码扫码生成(zxing)");
 
     }
 
@@ -94,35 +101,39 @@ public class MainActivity extends AppCompatActivity
                 switch (position) {
                     case 1:
                         intent.setClass(MainActivity.this, AsyncHttpActivity.class);
-                        startActivity(intent);
                         break;
                     case 2:
                         intent.setClass(MainActivity.this, ImageLoaderActivity.class);
-                        startActivity(intent);
                         break;
                     case 3:
                         intent.setClass(MainActivity.this, ShareActivity.class);
-                        startActivity(intent);
                         break;
                     case 4:
                         String getGpsd = SPUtils.get(context, "gesturePsd", "").toString();
-                        if (StringUtil.isNotEmpty(getGpsd)){
+                        if (StringUtil.isNotEmpty(getGpsd)) {
                             intent.setClass(context, GestureVerifyActivity.class);
-                            startActivity(intent);
-                        }else {
+                        } else {
                             intent.setClass(context, LoginActivity.class);
-                            startActivity(intent);
                         }
                         break;
                     case 5:
                         intent.setClass(MainActivity.this, BannerPagerActivity.class);
-                        startActivity(intent);
                         break;
                     case 6:
                         intent.setClass(MainActivity.this, NavigationActivity.class);
-                        startActivity(intent);
+                        break;
+                    case 7:
+                        intent.setClass(MainActivity.this, SweetAlertDialogActivity.class);
+                        break;
+                    case 8:
+                        intent.setClass(MainActivity.this, ActionSheetDialogActivity.class);
+                        break;
+                    case 9:
+                        intent.setClass(MainActivity.this, QrCodeActivity.class);
+
                         break;
                 }
+                startActivity(intent);
 
             }
         });
