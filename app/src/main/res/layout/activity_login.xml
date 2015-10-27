@@ -8,31 +8,55 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:text="登录成功后设置手势密码" />
 
-    <EditText
-        android:id="@+id/username_editText"
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:ems="10"
-        android:hint="请输入测试帐号:allen"
-        android:inputType="textPersonName" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/psd_editText"
+        <EditText
+            android:id="@+id/username_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入测试帐号:allen"
+            android:inputType="textPersonName" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:ems="10"
-        android:hint="请输入测试密码:123456"
-        android:inputType="textPassword" />
+        android:layout_height="wrap_content">
 
+        <EditText
+            android:id="@+id/psd_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入测试密码:123456"
+            android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
+    <!--
+        <EditText
+            android:id="@+id/username_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:hint="请输入测试帐号:allen"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/psd_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:hint="请输入测试密码:123456"
+            android:inputType="textPassword" />
+    -->
     <Button
         android:id="@+id/login_button"
         android:layout_width="match_parent"

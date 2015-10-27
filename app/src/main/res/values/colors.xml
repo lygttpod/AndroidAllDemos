@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="black">#000000</color><!--黑色 -->
+
     <!-- 频道管理-->
     <color name="subscribe_activity_bg">#ffefefef</color>
     <color name="subscribe_bg">#fff5f5f5</color>
@@ -51,4 +53,13 @@
     <color name="actionsheet_blue">#037BFF</color>
     <color name="actionsheet_red">#FD4A2E</color>
     <color name="actionsheet_gray">#8F8F8F</color>
+
+
+    <!-- table_fix_headers(start) -->
+    <color name="shadow_start">#80000000</color>
+    <color name="shadow_end">#00000000</color>
+    <color name="item_n">#ffffff</color>
+    <color name="item_p">#fafafa</color>
+    <color name="table_header">#d7d7d7</color>
+    <!-- table_fix_headers(end) -->
 </resources>

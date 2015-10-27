@@ -3,7 +3,6 @@
     package="com.allen.androidalldemos">
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
     <!-- 分享sdk需要的权限-->
     <uses-permission android:name="android.permission.GET_TASKS" />
@@ -47,6 +46,7 @@
         <activity android:name=".sweetalertdialog.activity.SweetAlertDialogActivity"></activity>
         <activity android:name=".actionsheetdialog.activity.ActionSheetDialogActivity"></activity>
         <activity android:name=".qrcode.activity.QrCodeActivity"></activity>
+        <activity android:name=".fixed.activity.HVScorllListviewActivity"></activity>
 
         <!--sharesdk需要的 -->
         <activity
