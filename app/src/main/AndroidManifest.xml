@@ -20,7 +20,7 @@
     <application
         android:name=".applaction.MyApplaction"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
@@ -47,6 +47,7 @@
         <activity android:name=".actionsheetdialog.activity.ActionSheetDialogActivity"></activity>
         <activity android:name=".qrcode.activity.QrCodeActivity"></activity>
         <activity android:name=".fixed.activity.HVScorllListviewActivity"></activity>
+        <activity android:name=".AboutActivity"></activity>
 
         <!--sharesdk需要的 -->
         <activity

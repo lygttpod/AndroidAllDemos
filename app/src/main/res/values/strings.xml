@@ -4,7 +4,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">About</string>
+    <string name="action_about">About</string>
 
     <!-- Gesture code starting -->
     <string name="setup_gesture_code">设置手势密码</string>
@@ -46,4 +46,16 @@
     <string name="bound_search_result_head_qxr">起息日</string>
     <string name="bound_search_result_head_dqr">兑付日</string>
     <!-- End -->
+
+    <!--about -->
+    <string name="about_info">version:1.0.0 \n\n
+        QQ交流群:247370192 \n\n
+        Fork me on Github. \n\n
+        https://github.com/lygttpod/AndroidAllDemos.git \n\n
+        More things will coming!
+    </string>
+     <string name="about_app">稳！准！狠！\n\n
+         使用当下主流框架，实现快速开发,我们不生产代码，只是代码的搬运工。找准所需，迁移使用，快速开发！\n\n
+
+    </string>
 </resources>
