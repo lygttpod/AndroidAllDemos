@@ -17,6 +17,9 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:name=".applaction.MyApplaction"
         android:allowBackup="true"
@@ -48,6 +51,7 @@
         <activity android:name=".qrcode.activity.QrCodeActivity"></activity>
         <activity android:name=".fixed.activity.HVScorllListviewActivity"></activity>
         <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".weather.activity.WeatherActivity"></activity>
 
         <!--sharesdk需要的 -->
         <activity
@@ -84,6 +88,22 @@
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
+
+        <!-- 百度地图定位需要-->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2"></action>
+            </intent-filter>
+        </service>
+
+        <!-- meta-data需要写在application中 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="LLIG9oTSTAld9PTu7ECGvqqS" />
+
     </application>
 
 </manifest>

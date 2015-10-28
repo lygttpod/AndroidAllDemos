@@ -107,17 +107,10 @@ public class GestureVerifyActivity extends Activity implements
                         finish();
 
                         if (isbackground) {
-//							SPUtils.put(MyApplication.getContext(),
-//									"isbackground", false);
-//
-//							GestureVerifyActivity.this.finish();
+
 
                         } else {
-//							Intent intent = new Intent();
-//							intent.setClass(getApplicationContext(),
-//									WelcomeActivity.class);
-//							startActivity(intent);
-//							finish();
+                            finish();
                         }
                     }
 

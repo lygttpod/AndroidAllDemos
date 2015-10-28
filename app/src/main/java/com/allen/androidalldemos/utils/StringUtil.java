@@ -37,4 +37,14 @@ public class StringUtil {
         }
         return src;
     }
+
+    public static String Substring(String string) {
+        string = string.substring(string.length() - 4, string.length() - 1);
+        return string;
+    }
+
+    public static String Substring1(String string) {
+        string = string.substring(string.length() - 3, string.length() );
+        return string;
+    }
 }

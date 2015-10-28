@@ -23,6 +23,7 @@ import com.allen.androidalldemos.bannerpager.activity.BannerPagerActivity;
 import com.allen.androidalldemos.fixed.activity.HVScorllListviewActivity;
 import com.allen.androidalldemos.gesturelockpsd.activity.LoginActivity;
 import com.allen.androidalldemos.gesturelockpsd.gesture.activity.GestureVerifyActivity;
+import com.allen.androidalldemos.weather.activity.WeatherActivity;
 import com.allen.androidalldemos.imageloader.ImageLoaderActivity;
 import com.allen.androidalldemos.navigation.activity.NavigationActivity;
 import com.allen.androidalldemos.qrcode.activity.QrCodeActivity;
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity
         list.add("仿iOS选择框(actionsheetdialog)");
         list.add("二维码扫码生成(zxing)");
         list.add("水平/垂直联动demo");
+        list.add("天气预报");
 
     }
 
@@ -135,6 +137,9 @@ public class MainActivity extends AppCompatActivity
                         break;
                     case 10:
                         intent.setClass(MainActivity.this, HVScorllListviewActivity.class);
+                        break;
+                    case 11:
+                        intent.setClass(MainActivity.this, WeatherActivity.class);
                         break;
                 }
                 startActivity(intent);
