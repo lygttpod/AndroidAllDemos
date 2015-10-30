@@ -4,9 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,16 +13,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 
 import com.allen.androidalldemos.actionsheetdialog.activity.ActionSheetDialogActivity;
 import com.allen.androidalldemos.adapter.ListViewAdapter;
 import com.allen.androidalldemos.asynchttp.activity.AsyncHttpActivity;
 import com.allen.androidalldemos.bannerpager.activity.BannerPagerActivity;
+import com.allen.androidalldemos.bluetooth.activity.BluetoothActivity1;
 import com.allen.androidalldemos.fixed.activity.HVScorllListviewActivity;
 import com.allen.androidalldemos.gesturelockpsd.activity.LoginActivity;
 import com.allen.androidalldemos.gesturelockpsd.gesture.activity.GestureVerifyActivity;
-import com.allen.androidalldemos.weather.activity.WeatherActivity;
 import com.allen.androidalldemos.imageloader.ImageLoaderActivity;
 import com.allen.androidalldemos.navigation.activity.NavigationActivity;
 import com.allen.androidalldemos.qrcode.activity.QrCodeActivity;
@@ -31,6 +31,7 @@ import com.allen.androidalldemos.sharesdk.ShareActivity;
 import com.allen.androidalldemos.sweetalertdialog.activity.SweetAlertDialogActivity;
 import com.allen.androidalldemos.utils.SPUtils;
 import com.allen.androidalldemos.utils.StringUtil;
+import com.allen.androidalldemos.weather.activity.WeatherActivity;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import java.util.ArrayList;
@@ -53,7 +54,6 @@ public class MainActivity extends AppCompatActivity
         context = this;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity
         list.add("二维码扫码生成(zxing)");
         list.add("水平/垂直联动demo");
         list.add("天气预报");
+        list.add("蓝牙通讯");
 
     }
 
@@ -140,6 +141,9 @@ public class MainActivity extends AppCompatActivity
                         break;
                     case 11:
                         intent.setClass(MainActivity.this, WeatherActivity.class);
+                        break;
+                    case 12:
+                        intent.setClass(MainActivity.this, BluetoothActivity1.class);
                         break;
                 }
                 startActivity(intent);

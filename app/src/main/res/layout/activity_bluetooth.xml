@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/app_toolbar"></include>
+
+    <Button
+        android:id="@+id/openBluBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="搜索蓝牙设备" />
+
+    <LinearLayout
+        android:id="@+id/bond_linarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="已配对蓝牙设备" />
+
+        <ListView
+            android:id="@+id/bluetooth_bond_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"></ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="搜索到的设备" />
+
+        <ListView
+            android:id="@+id/bluetooth_unbond_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"></ListView>
+    </LinearLayout>
+
+</LinearLayout>
