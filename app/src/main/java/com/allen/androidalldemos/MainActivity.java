@@ -20,11 +20,12 @@ import com.allen.androidalldemos.actionsheetdialog.activity.ActionSheetDialogAct
 import com.allen.androidalldemos.adapter.ListViewAdapter;
 import com.allen.androidalldemos.asynchttp.activity.AsyncHttpActivity;
 import com.allen.androidalldemos.bannerpager.activity.BannerPagerActivity;
-import com.allen.androidalldemos.bluetooth.activity.BluetoothActivity1;
+import com.allen.androidalldemos.bluetooth.activity.BluetoothChatActivity;
 import com.allen.androidalldemos.fixed.activity.HVScorllListviewActivity;
 import com.allen.androidalldemos.gesturelockpsd.activity.LoginActivity;
 import com.allen.androidalldemos.gesturelockpsd.gesture.activity.GestureVerifyActivity;
 import com.allen.androidalldemos.imageloader.ImageLoaderActivity;
+import com.allen.androidalldemos.nanohttpd_and_acache.activity.NanoHttpdActivity;
 import com.allen.androidalldemos.navigation.activity.NavigationActivity;
 import com.allen.androidalldemos.qrcode.activity.QrCodeActivity;
 import com.allen.androidalldemos.sharesdk.ShareActivity;
@@ -32,6 +33,7 @@ import com.allen.androidalldemos.sweetalertdialog.activity.SweetAlertDialogActiv
 import com.allen.androidalldemos.utils.SPUtils;
 import com.allen.androidalldemos.utils.StringUtil;
 import com.allen.androidalldemos.weather.activity.WeatherActivity;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import java.util.ArrayList;
@@ -91,6 +93,7 @@ public class MainActivity extends AppCompatActivity
         list.add("水平/垂直联动demo");
         list.add("天气预报");
         list.add("蓝牙通讯");
+        list.add("本地监听网络请求(nanohttpd+acache)");
 
     }
 
@@ -99,6 +102,7 @@ public class MainActivity extends AppCompatActivity
         pullToRefreshListView = (PullToRefreshListView) findViewById(R.id.listview);
         listViewAdapter = new ListViewAdapter(this, list, listurl);
         pullToRefreshListView.setAdapter(listViewAdapter);
+        pullToRefreshListView.setMode(PullToRefreshBase.Mode.BOTH);
         pullToRefreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -143,7 +147,10 @@ public class MainActivity extends AppCompatActivity
                         intent.setClass(MainActivity.this, WeatherActivity.class);
                         break;
                     case 12:
-                        intent.setClass(MainActivity.this, BluetoothActivity1.class);
+                        intent.setClass(MainActivity.this, BluetoothChatActivity.class);
+                        break;
+                    case 13:
+                        intent.setClass(MainActivity.this, NanoHttpdActivity.class);
                         break;
                 }
                 startActivity(intent);

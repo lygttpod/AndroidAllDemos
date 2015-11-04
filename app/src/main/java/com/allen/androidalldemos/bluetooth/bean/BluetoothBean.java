@@ -10,9 +10,8 @@ public class BluetoothBean {
     private String dvAddress;
     private boolean isBond;
 
-    public BluetoothBean(String dvName, String dvAddress, boolean isBond) {
+    public BluetoothBean(String dvName, String dvAddress) {
         this.dvAddress = dvAddress;
-        this.isBond = isBond;
         this.dvName = dvName;
     }
 

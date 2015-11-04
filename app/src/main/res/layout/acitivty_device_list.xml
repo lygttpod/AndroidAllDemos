@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/app_toolbar"></include>
+
+    <LinearLayout
+        android:layout_below="@+id/toolbar1"
+        android:id="@+id/bond_ll"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="已配对设备" />
+
+        <ListView
+            android:id="@+id/bond_bt_lv"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" >
+        </ListView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_above="@+id/scan_bt_btn"
+        android:layout_below="@+id/bond_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="未配对设备" />
+
+        <ListView
+            android:id="@+id/un_bond_bt_lv"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" >
+        </ListView>
+    </LinearLayout>
+
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/scan_bt_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="搜索蓝牙设备" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

@@ -99,4 +99,17 @@
         <item name="android:windowEnterAnimation">@anim/actionsheet_dialog_in</item>
         <item name="android:windowExitAnimation">@anim/actionsheet_dialog_out</item>
     </style>
+
+    <!--聊天气泡界面 -->
+    <style name="chating_msg_receive_style">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/bt_people_message_received_normal</item>
+    </style>
+
+    <style name="chating_msg_send_style">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/bt_message_sent_images_normal</item>
+    </style>
 </resources>

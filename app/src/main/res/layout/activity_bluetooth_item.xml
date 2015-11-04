@@ -20,6 +20,5 @@
         android:layout_alignParentTop="true"
         android:gravity="center"
         android:padding="5dp"
-        android:text="sadadadadad"
         android:textSize="18sp" />
 </RelativeLayout>
