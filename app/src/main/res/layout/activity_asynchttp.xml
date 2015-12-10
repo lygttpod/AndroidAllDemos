@@ -33,15 +33,23 @@
         android:layout_alignParentStart="true"
         android:text="发送异步请求" />
 
+    <!--<ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone" />
+     -->
 
-    <ProgressBar
+    <com.allen.androidalldemos.loading.view.AVLoadingIndicatorView
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_gravity="center_horizontal"
-        android:visibility="gone" />
-
-
+        android:visibility="gone"
+        app:indicator="BallSpinFadeLoader" />
 </RelativeLayout>

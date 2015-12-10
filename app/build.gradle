@@ -5,7 +5,7 @@ android {
     buildToolsVersion '23.0.1'
     defaultConfig {
         applicationId "com.allen.androidalldemos"
-        minSdkVersion 18
+        minSdkVersion 14
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -42,4 +42,7 @@ dependencies {
     compile 'com.google.zxing:core:3.2.1'
     compile files('libs/BaiduLBS_Android.jar')
     compile 'com.squareup.okhttp:okhttp:2.5.0'
+    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
 }

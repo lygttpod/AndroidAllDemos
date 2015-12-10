@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<title>404页面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-touch-fullscreen" content="YES">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link href="css/base-min.css" rel="stylesheet" type="text/css" media="all"/> -->
+<style type="text/css">
+    body,p{margin:0;padding:0;}
+    img{border:0;}
+    body{background-color:#e2e2e2;font:12px/1.5 Tahoma, Arial, \5b8b\4f53, sans-serif;-webkit-text-size-adjust:none;-webkit-touch-callout:none;-webkit-user-select:none;}
+    .oppsImgDiv{background-color:#fff;padding:10% 10% 0 10%;}
+    .oppsImg{width:80%;margin: 0 10%;border:none;}
+    .oppsTextDiv{padding: 8% 10% 5% 10%;} 
+    .oppsTextDiv p{margin:5px 0;font-size:14px;line-height: 20px;}
+    .purpleText{color:#8b308d;}
+    ::-webkit-scrollbar{width:1px;height:1px;display:none;}
+    ::-webkit-scrollbar-track,::-webkit-scrollbar-thumb{border-radius:999px;border:5px solid transparent;}
+    ::-webkit-scrollbar-track{box-shadow:1px 1px 5px rgba(0,0,0,.2) inset;}
+    ::-webkit-scrollbar-thumb{min-height:20px;background-clip:content-box;box-shadow:0 0 0 5px rgba(0,0,0,.2) inset;}
+    ::-webkit-scrollbar-corner{background:transparent;}
+</style>
+</head>
+<body>
+<div class="fatherDiv" id="">
+    <div class="oppsImgDiv">
+        <p id="jTempP" style="height:100px;line-height:100px;text-align:center">对不起，无法连接...</p>
+        <p id="jImgP" style="display:none">
+            <img src="/img/opps.jpg" class="oppsImg" alt="对不起,无法连接" id="jImg">
+        </p>
+    </div>
+    <div class="oppsTextDiv">
+        <p>可能原因：</p>
+        <p>
+            <span>1、您的网络环境较差，请检查网络状态后</span>
+            <a class="purpleText" href="javascript:;" id="jReload">重新加载</a>
+        </p>
+        <p>
+            <span>2、我们的服务器正在维护中，请拨打客户热线</span>
+            <a class="purpleText" href="javascript:;" id="jTel">95564</a>
+            <span>获得更多帮助</span>
+        </p>
+    </div>
+</div>
+<script type="text/javascript">
+var jImg = document.getElementById("jImg"),
+    jTempP = document.getElementById("jTempP"),
+    jImgP = document.getElementById("jImgP");
+jImg.onload = function() {
+    jTempP.style.display="none";
+    jImgP.removeAttribute("style");
+}
+window.onload = function (){
+    var jBtn = document.getElementById('jReload'),
+        jTel = document.getElementById('jTel');
+    jBtn.onclick = function (){
+        window.location.reload(true);
+    };
+    jTel.onclick = function(){
+        window.location.href = 'http://tel:95564';
+    }
+};
+</script>
+</body>
+</html>

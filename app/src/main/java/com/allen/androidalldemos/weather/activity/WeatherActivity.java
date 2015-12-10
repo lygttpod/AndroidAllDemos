@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.allen.androidalldemos.R;
+import com.allen.androidalldemos.utils.LogUtil;
 import com.allen.androidalldemos.utils.SPUtils;
 import com.allen.androidalldemos.utils.StringUtil;
 import com.allen.androidalldemos.utils.ToastUtils;
@@ -265,8 +266,10 @@ public class WeatherActivity extends AppCompatActivity {
 
             String path = "http://api.map.baidu.com/telematics/v3/weather?location="
                     + location + "&output=json&ak=RUD7mk38fQdG0ZjcLCyigc2u";
+            LogUtil.d("allen",path);
             // 发送天气请求
             asyncHttpClient.get(path, new AsyncHttpResponseHandler() {
+
 
                 @Override
                 public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {

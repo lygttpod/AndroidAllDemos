@@ -55,11 +55,15 @@
         <activity android:name=".fixed.activity.HVScorllListviewActivity"></activity>
         <activity android:name=".AboutActivity"></activity>
         <activity android:name=".weather.activity.WeatherActivity"></activity>
+        <activity android:name=".weather.activity.WeatherActivity_useGson"></activity>
 
         <activity android:name=".ScrollingActivity"></activity>
         <activity android:name=".bluetooth.activity.BluetoothChatActivity"></activity>
         <activity android:name=".bluetooth.activity.DeviceListActivity"></activity>
         <activity android:name=".nanohttpd_and_acache.activity.NanoHttpdActivity"></activity>
+        <activity android:name=".loadingdialog.activity.LoadingDialogActivity"></activity>
+
+        <activity android:name=".material_design.activity.DesginActivity_one"></activity>
 
         <!--sharesdk需要的 -->
         <activity

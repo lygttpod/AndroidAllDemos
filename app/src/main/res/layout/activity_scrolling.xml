@@ -39,6 +39,7 @@
         tools:showIn="@layout/activity_scrolling">
 
         <TextView
+            android:id="@+id/tv1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/aaaa" />

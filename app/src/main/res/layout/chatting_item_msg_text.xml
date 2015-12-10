@@ -9,6 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:orientation="horizontal">
 
@@ -17,6 +18,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:src="@mipmap/third_guide_head_1" />
@@ -29,6 +31,7 @@
             android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:layout_toEndOf="@+id/imageView1"
+            android:layout_toRightOf="@+id/imageView1"
             android:orientation="vertical">
 
             <TextView
@@ -36,8 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:gravity="center"
-                android:text="内容" />
+                android:text="左边消息" />
         </LinearLayout>
 
 
@@ -48,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/left_msg_ll"
+       android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
 
         <LinearLayout
@@ -57,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_toStartOf="@+id/imageView2"
+            android:layout_toLeftOf="@+id/imageView2"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -65,8 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:gravity="center"
-                android:text="内容" />
+                android:text="右边消息" />
         </LinearLayout>
 
         <ImageView
@@ -74,6 +77,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:src="@mipmap/third_guide_head_2" />

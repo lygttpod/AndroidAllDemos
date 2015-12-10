@@ -7,6 +7,8 @@ import java.util.Map;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.allen.androidalldemos.weather.bean.WeatherBean;
+
 public class SPUtils
 {
 	public SPUtils()

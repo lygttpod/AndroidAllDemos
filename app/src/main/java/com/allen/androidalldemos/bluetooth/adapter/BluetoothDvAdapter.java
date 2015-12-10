@@ -49,7 +49,6 @@ public class BluetoothDvAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.activity_bluetooth_item, null);
             viewHolder.dvName = (TextView) convertView.findViewById(R.id.dvName_TV);
             viewHolder.dvAddress = (TextView) convertView.findViewById(R.id.dvAddress_TV);
-
             convertView.setTag(viewHolder);
 
         } else {

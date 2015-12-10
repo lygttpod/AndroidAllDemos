@@ -25,6 +25,8 @@ import com.allen.androidalldemos.fixed.activity.HVScorllListviewActivity;
 import com.allen.androidalldemos.gesturelockpsd.activity.LoginActivity;
 import com.allen.androidalldemos.gesturelockpsd.gesture.activity.GestureVerifyActivity;
 import com.allen.androidalldemos.imageloader.ImageLoaderActivity;
+import com.allen.androidalldemos.loadingdialog.activity.LoadingDialogActivity;
+import com.allen.androidalldemos.material_design.activity.DesginActivity_one;
 import com.allen.androidalldemos.nanohttpd_and_acache.activity.NanoHttpdActivity;
 import com.allen.androidalldemos.navigation.activity.NavigationActivity;
 import com.allen.androidalldemos.qrcode.activity.QrCodeActivity;
@@ -33,6 +35,7 @@ import com.allen.androidalldemos.sweetalertdialog.activity.SweetAlertDialogActiv
 import com.allen.androidalldemos.utils.SPUtils;
 import com.allen.androidalldemos.utils.StringUtil;
 import com.allen.androidalldemos.weather.activity.WeatherActivity;
+import com.allen.androidalldemos.weather.activity.WeatherActivity_useGson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
@@ -91,10 +94,12 @@ public class MainActivity extends AppCompatActivity
         list.add("仿iOS选择框(actionsheetdialog)");
         list.add("二维码扫码生成(zxing)");
         list.add("水平/垂直联动demo");
-        list.add("天气预报");
+        list.add("天气预报_普通解析");
+        list.add("天气预报_gson解析");
         list.add("蓝牙通讯");
         list.add("本地监听网络请求(nanohttpd+acache)");
-
+        list.add("自定义loading对话框");
+        list.add("Android Material Design");
     }
 
     private void initListView() {
@@ -147,10 +152,19 @@ public class MainActivity extends AppCompatActivity
                         intent.setClass(MainActivity.this, WeatherActivity.class);
                         break;
                     case 12:
-                        intent.setClass(MainActivity.this, BluetoothChatActivity.class);
+                        intent.setClass(MainActivity.this, WeatherActivity_useGson.class);
                         break;
                     case 13:
+                        intent.setClass(MainActivity.this, BluetoothChatActivity.class);
+                        break;
+                    case 14:
                         intent.setClass(MainActivity.this, NanoHttpdActivity.class);
+                        break;
+                    case 15:
+                        intent.setClass(MainActivity.this, LoadingDialogActivity.class);
+                        break;
+                    case 16:
+                        intent.setClass(MainActivity.this, DesginActivity_one.class);
                         break;
                 }
                 startActivity(intent);
