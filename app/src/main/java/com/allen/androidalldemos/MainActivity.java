@@ -26,7 +26,7 @@ import com.allen.androidalldemos.gesturelockpsd.activity.LoginActivity;
 import com.allen.androidalldemos.gesturelockpsd.gesture.activity.GestureVerifyActivity;
 import com.allen.androidalldemos.imageloader.ImageLoaderActivity;
 import com.allen.androidalldemos.loadingdialog.activity.LoadingDialogActivity;
-import com.allen.androidalldemos.material_design.activity.DesginActivity_one;
+import com.allen.androidalldemos.material_design.activity.DesginActivity_Home;
 import com.allen.androidalldemos.nanohttpd_and_acache.activity.NanoHttpdActivity;
 import com.allen.androidalldemos.navigation.activity.NavigationActivity;
 import com.allen.androidalldemos.qrcode.activity.QrCodeActivity;
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity
                         intent.setClass(MainActivity.this, LoadingDialogActivity.class);
                         break;
                     case 16:
-                        intent.setClass(MainActivity.this, DesginActivity_one.class);
+                        intent.setClass(MainActivity.this, DesginActivity_Home.class);
                         break;
                 }
                 startActivity(intent);

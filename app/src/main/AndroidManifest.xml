@@ -63,7 +63,8 @@
         <activity android:name=".nanohttpd_and_acache.activity.NanoHttpdActivity"></activity>
         <activity android:name=".loadingdialog.activity.LoadingDialogActivity"></activity>
 
-        <activity android:name=".material_design.activity.DesginActivity_one"></activity>
+        <activity android:name=".material_design.activity.DesginActivity_Detail"></activity>
+        <activity android:name=".material_design.activity.DesginActivity_Home"></activity>
 
         <!--sharesdk需要的 -->
         <activity
