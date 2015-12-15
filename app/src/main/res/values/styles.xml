@@ -112,4 +112,13 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:background">@drawable/bt_message_sent_images_normal</item>
     </style>
+
+    <!--tablayout样式 -->
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
+    </style>
+
+    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
 </resources>

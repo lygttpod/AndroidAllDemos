@@ -1,5 +1,6 @@
 package com.allen.androidalldemos.material_design.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -38,13 +39,17 @@ public class DesginActivity_Home extends AppCompatActivity {
 
     private void initView() {
         mToolbar = (Toolbar) findViewById(R.id.design_home_toolbar);
+
+        mToolbar.setTitle("Android Material Design");
+        //mToolbar.setSubtitle("Subtitle");
+        //mToolbar.setSubtitleTextColor(Color.WHITE);
+        //mToolbar.setLogo(R.mipmap.ic_menu);
         setSupportActionBar(mToolbar);
-        mToolbar.setTitle("Allen");
         mToolbar.setNavigationIcon(R.mipmap.ic_menu);
 
         mTabLayout = (TabLayout) findViewById(R.id.design_home_tablayout);
         mViewPager = (ViewPager) findViewById(R.id.design_home_viewpager);
-        adapter = new DesignHome_Fragment_Adapter(getSupportFragmentManager(), fragments, tabTitle);
+        adapter = new DesignHome_Fragment_Adapter(getSupportFragmentManager(), fragments, tabTitle,this);
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabsFromPagerAdapter(adapter);

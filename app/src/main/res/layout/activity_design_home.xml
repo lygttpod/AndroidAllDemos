@@ -23,6 +23,7 @@
         <android.support.design.widget.TabLayout
             android:id="@+id/design_home_tablayout"
             android:layout_width="match_parent"
+            style="@style/MyCustomTabLayout"
             android:layout_height="wrap_content">
 
         </android.support.design.widget.TabLayout>
