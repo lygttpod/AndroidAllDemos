@@ -10,6 +10,8 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,18 +20,20 @@ import android.widget.AdapterView;
 
 import com.allen.androidalldemos.actionsheetdialog.activity.ActionSheetDialogActivity;
 import com.allen.androidalldemos.adapter.ListViewAdapter;
+import com.allen.androidalldemos.adapter.RecycleviewAdapter;
 import com.allen.androidalldemos.asynchttp.activity.AsyncHttpActivity;
 import com.allen.androidalldemos.bannerpager.activity.BannerPagerActivity;
 import com.allen.androidalldemos.bluetooth.activity.BluetoothChatActivity;
 import com.allen.androidalldemos.fixed.activity.HVScorllListviewActivity;
 import com.allen.androidalldemos.gesturelockpsd.activity.LoginActivity;
 import com.allen.androidalldemos.gesturelockpsd.gesture.activity.GestureVerifyActivity;
-import com.allen.androidalldemos.imageloader.ImageLoaderActivity;
+import com.allen.androidalldemos.imageloader.activity.ImageLoaderActivity;
 import com.allen.androidalldemos.loadingdialog.activity.LoadingDialogActivity;
 import com.allen.androidalldemos.material_design.activity.DesginActivity_Home;
 import com.allen.androidalldemos.nanohttpd_and_acache.activity.NanoHttpdActivity;
 import com.allen.androidalldemos.navigation.activity.NavigationActivity;
 import com.allen.androidalldemos.qrcode.activity.QrCodeActivity;
+import com.allen.androidalldemos.recycleview.activity.RecycleViewActivity;
 import com.allen.androidalldemos.sharesdk.ShareActivity;
 import com.allen.androidalldemos.sweetalertdialog.activity.SweetAlertDialogActivity;
 import com.allen.androidalldemos.utils.SPUtils;
@@ -45,7 +49,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private PullToRefreshListView pullToRefreshListView;
+    private RecyclerView recyclerView;
     private ListViewAdapter listViewAdapter;
     private List<String> list;
     private List<String> listurl;
@@ -100,17 +104,19 @@ public class MainActivity extends AppCompatActivity
         list.add("本地监听网络请求(nanohttpd+acache)");
         list.add("自定义loading对话框");
         list.add("Android Material Design");
+        list.add("RecycleView");
     }
 
     private void initListView() {
         initlistDate();
-        pullToRefreshListView = (PullToRefreshListView) findViewById(R.id.listview);
-        listViewAdapter = new ListViewAdapter(this, list, listurl);
-        pullToRefreshListView.setAdapter(listViewAdapter);
-        pullToRefreshListView.setMode(PullToRefreshBase.Mode.BOTH);
-        pullToRefreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        recyclerView = (RecyclerView) findViewById(R.id.listview);
+        // listViewAdapter = new ListViewAdapter(this, list, listurl);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        RecycleviewAdapter adapter = new RecycleviewAdapter(this,list);
+        adapter.setOnRecyclerViewItemClickListener(new RecycleviewAdapter.OnRecyclerViewItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(View view, int position) {
                 Intent intent = new Intent();
                 switch (position) {
                     case 1:
@@ -166,11 +172,22 @@ public class MainActivity extends AppCompatActivity
                     case 16:
                         intent.setClass(MainActivity.this, DesginActivity_Home.class);
                         break;
+                    case 17:
+                        intent.setClass(MainActivity.this, RecycleViewActivity.class);
+                        break;
                 }
                 startActivity(intent);
-
             }
         });
+
+        recyclerView.setAdapter(new RecycleviewAdapter(this, list));
+
+//        recyclerView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//
+//            }
+//        });
     }
 
     @Override

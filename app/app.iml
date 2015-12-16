@@ -108,8 +108,8 @@
     <orderEntry type="library" exported="" name="ShareSDK-Wechat-Moments-2.6.3" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="design-23.1.0" level="project" />
-    <orderEntry type="library" exported="" name="universal-image-loader-1.9.4" level="project" />
     <orderEntry type="library" exported="" name="greendao-2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="universal-image-loader-1.9.4" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-QQ-2.6.3" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Core-2.6.3" level="project" />
     <orderEntry type="library" exported="" name="android-async-http-1.4.9" level="project" />

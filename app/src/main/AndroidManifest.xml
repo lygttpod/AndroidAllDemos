@@ -41,7 +41,7 @@
         </activity>
 
         <activity android:name=".asynchttp.activity.AsyncHttpActivity"></activity>
-        <activity android:name=".imageloader.ImageLoaderActivity"></activity>
+        <activity android:name=".imageloader.activity.ImageLoaderActivity"></activity>
         <activity android:name=".bannerpager.activity.BannerPagerActivity"></activity>
         <activity android:name=".sharesdk.ShareActivity"></activity>
         <activity android:name=".gesturelockpsd.activity.LoginActivity"></activity>
@@ -65,6 +65,10 @@
 
         <activity android:name=".material_design.activity.DesginActivity_Detail"></activity>
         <activity android:name=".material_design.activity.DesginActivity_Home"></activity>
+        <activity
+            android:name=".recycleview.activity.RecycleViewActivity"
+            android:label="RecycleViewDemo"
+            android:theme="@style/AppTheme"></activity>
 
         <!--sharesdk需要的 -->
         <activity

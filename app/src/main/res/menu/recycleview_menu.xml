@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_list"
+        android:orderInCategory="100"
+        android:title="list展示"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/action_list_normal"
+                android:orderInCategory="100"
+                android:title="标准"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_list_vertical_reverse"
+                android:orderInCategory="100"
+                android:title="垂直反向"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_list_horizontal"
+                android:orderInCategory="100"
+                android:title="水平"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_list_horizontal_reverse"
+                android:orderInCategory="100"
+                android:title="水平反向"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_grid"
+        android:orderInCategory="100"
+        android:title="grid展示"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/action_grid_normal"
+                android:orderInCategory="100"
+                android:title="标准"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_grid_vertical_reverse"
+                android:orderInCategory="100"
+                android:title="垂直反向"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_grid_horizontal"
+                android:orderInCategory="100"
+                android:title="水平"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_grid_horizontal_reverse"
+                android:orderInCategory="100"
+                android:title="水平反向"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_staggered"
+        android:orderInCategory="100"
+        android:title="瀑布流展示"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/action_staggered_normal"
+                android:orderInCategory="100"
+                android:title="标准"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_staggered_vertical_reverse"
+                android:orderInCategory="100"
+                android:title="垂直反向"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_staggered_horizontal"
+                android:orderInCategory="100"
+                android:title="水平"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_staggered_horizontal_reverse"
+                android:orderInCategory="100"
+                android:title="水平反向"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+</menu>

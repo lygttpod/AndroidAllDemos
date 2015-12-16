@@ -1,12 +1,15 @@
-package com.allen.androidalldemos.imageloader;
+package com.allen.androidalldemos.imageloader.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.allen.androidalldemos.R;
 import com.allen.androidalldemos.adapter.ListViewAdapter;
+import com.allen.androidalldemos.imageloader.adapter.ListAdapter;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import java.util.ArrayList;
@@ -16,10 +19,11 @@ import java.util.List;
  * Created by allen on 2015/10/21.
  */
 public class ImageLoaderActivity extends AppCompatActivity {
-    private PullToRefreshListView pullToRefreshListView;
+    private RecyclerView mRecyclerView;
     private ListViewAdapter listViewAdapter;
     private List<String> list;
     private List<String> listurl;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +31,8 @@ public class ImageLoaderActivity extends AppCompatActivity {
         initListView();
         initToolbar();
     }
-    private void initToolbar(){
+
+    private void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("异步网络图片请求");
         setSupportActionBar(toolbar);
@@ -39,6 +44,7 @@ public class ImageLoaderActivity extends AppCompatActivity {
             }
         });
     }
+
     private void initlistDate() {
         listurl = new ArrayList<>();
         list = new ArrayList<>();
@@ -57,9 +63,10 @@ public class ImageLoaderActivity extends AppCompatActivity {
 
     private void initListView() {
         initlistDate();
-        pullToRefreshListView = (PullToRefreshListView) findViewById(R.id.listview);
-        listViewAdapter = new ListViewAdapter(this, list,listurl);
-        pullToRefreshListView.setAdapter(listViewAdapter);
+        mRecyclerView = (RecyclerView) findViewById(R.id.listview);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.setAdapter(new ListAdapter(this, listurl));
 
     }
 
