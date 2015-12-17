@@ -173,7 +173,6 @@ public class RecycleViewActivity extends AppCompatActivity {
         getStaggeredData(dataBeans);
         //设置瀑布流布局管理器
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, isVertical ? StaggeredGridLayoutManager.VERTICAL : StaggeredGridLayoutManager.HORIZONTAL);
-
         layoutManager.setReverseLayout(isReverse);
         recyclerView.setLayoutManager(layoutManager);
 

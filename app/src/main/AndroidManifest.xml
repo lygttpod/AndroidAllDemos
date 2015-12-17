@@ -57,7 +57,6 @@
         <activity android:name=".weather.activity.WeatherActivity"></activity>
         <activity android:name=".weather.activity.WeatherActivity_useGson"></activity>
 
-        <activity android:name=".ScrollingActivity"></activity>
         <activity android:name=".bluetooth.activity.BluetoothChatActivity"></activity>
         <activity android:name=".bluetooth.activity.DeviceListActivity"></activity>
         <activity android:name=".nanohttpd_and_acache.activity.NanoHttpdActivity"></activity>
@@ -69,7 +68,7 @@
             android:name=".recycleview.activity.RecycleViewActivity"
             android:label="RecycleViewDemo"
             android:theme="@style/AppTheme"></activity>
-
+        <activity android:name=".recycleview.activity.DragRecycleViewActivity"></activity>
         <!--sharesdk需要的 -->
         <activity
             android:name="com.mob.tools.MobUIShell"

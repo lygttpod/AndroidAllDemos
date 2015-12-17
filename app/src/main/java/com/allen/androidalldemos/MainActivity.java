@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.allen.androidalldemos.actionsheetdialog.activity.ActionSheetDialogActivity;
 import com.allen.androidalldemos.adapter.ListViewAdapter;
@@ -33,7 +34,9 @@ import com.allen.androidalldemos.material_design.activity.DesginActivity_Home;
 import com.allen.androidalldemos.nanohttpd_and_acache.activity.NanoHttpdActivity;
 import com.allen.androidalldemos.navigation.activity.NavigationActivity;
 import com.allen.androidalldemos.qrcode.activity.QrCodeActivity;
+import com.allen.androidalldemos.recycleview.activity.DragRecycleViewActivity;
 import com.allen.androidalldemos.recycleview.activity.RecycleViewActivity;
+import com.allen.androidalldemos.recycleview.adapter.ListView_Adapter;
 import com.allen.androidalldemos.sharesdk.ShareActivity;
 import com.allen.androidalldemos.sweetalertdialog.activity.SweetAlertDialogActivity;
 import com.allen.androidalldemos.utils.SPUtils;
@@ -49,7 +52,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private RecyclerView recyclerView;
+    private ListView listView;
     private ListViewAdapter listViewAdapter;
     private List<String> list;
     private List<String> listurl;
@@ -84,51 +87,26 @@ public class MainActivity extends AppCompatActivity
         initListView();
     }
 
-    private void initlistDate() {
-        list = new ArrayList<>();
-        listurl = new ArrayList<>();
-
-        list.add("异步网络请求(android-async-http)");
-        list.add("图片异步加载(universal-image-loader)");
-        list.add("分享功能(shareSDK)");
-        list.add("手势密码解锁(Gesture_LockPsd)");
-        list.add("广告页滑动(bannerpager)");
-        list.add("仿新闻导航菜单(tab+viewpager)");
-        list.add("弹出框(dialog)");
-        list.add("仿iOS选择框(actionsheetdialog)");
-        list.add("二维码扫码生成(zxing)");
-        list.add("水平/垂直联动demo");
-        list.add("天气预报_普通解析");
-        list.add("天气预报_gson解析");
-        list.add("蓝牙通讯");
-        list.add("本地监听网络请求(nanohttpd+acache)");
-        list.add("自定义loading对话框");
-        list.add("Android Material Design");
-        list.add("RecycleView");
-    }
-
     private void initListView() {
-        initlistDate();
-        recyclerView = (RecyclerView) findViewById(R.id.listview);
-        // listViewAdapter = new ListViewAdapter(this, list, listurl);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        RecycleviewAdapter adapter = new RecycleviewAdapter(this,list);
-        adapter.setOnRecyclerViewItemClickListener(new RecycleviewAdapter.OnRecyclerViewItemClickListener() {
+
+        listView = (ListView) findViewById(R.id.listview);
+        ListView_Adapter adapter1 = new ListView_Adapter(MainDataUtils.getListDate1(),this);
+        listView.setAdapter(adapter1);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int position) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent();
                 switch (position) {
-                    case 1:
+                    case 0:
                         intent.setClass(MainActivity.this, AsyncHttpActivity.class);
                         break;
-                    case 2:
+                    case 1:
                         intent.setClass(MainActivity.this, ImageLoaderActivity.class);
                         break;
-                    case 3:
+                    case 2:
                         intent.setClass(MainActivity.this, ShareActivity.class);
                         break;
-                    case 4:
+                    case 3:
                         String getGpsd = SPUtils.get(context, "gesturePsd", "").toString();
                         if (StringUtil.isNotEmpty(getGpsd)) {
                             intent.setClass(context, GestureVerifyActivity.class);
@@ -136,58 +114,53 @@ public class MainActivity extends AppCompatActivity
                             intent.setClass(context, LoginActivity.class);
                         }
                         break;
-                    case 5:
+                    case 4:
                         intent.setClass(MainActivity.this, BannerPagerActivity.class);
                         break;
-                    case 6:
+                    case 5:
                         intent.setClass(MainActivity.this, NavigationActivity.class);
                         break;
-                    case 7:
+                    case 6:
                         intent.setClass(MainActivity.this, SweetAlertDialogActivity.class);
                         break;
-                    case 8:
+                    case 7:
                         intent.setClass(MainActivity.this, ActionSheetDialogActivity.class);
                         break;
-                    case 9:
+                    case 8:
                         intent.setClass(MainActivity.this, QrCodeActivity.class);
                         break;
-                    case 10:
+                    case 9:
                         intent.setClass(MainActivity.this, HVScorllListviewActivity.class);
                         break;
-                    case 11:
+                    case 10:
                         intent.setClass(MainActivity.this, WeatherActivity.class);
                         break;
-                    case 12:
+                    case 11:
                         intent.setClass(MainActivity.this, WeatherActivity_useGson.class);
                         break;
-                    case 13:
+                    case 12:
                         intent.setClass(MainActivity.this, BluetoothChatActivity.class);
                         break;
-                    case 14:
+                    case 13:
                         intent.setClass(MainActivity.this, NanoHttpdActivity.class);
                         break;
-                    case 15:
+                    case 14:
                         intent.setClass(MainActivity.this, LoadingDialogActivity.class);
                         break;
-                    case 16:
+                    case 15:
                         intent.setClass(MainActivity.this, DesginActivity_Home.class);
                         break;
-                    case 17:
+                    case 16:
                         intent.setClass(MainActivity.this, RecycleViewActivity.class);
+                        break;
+                    case 17:
+                        intent.setClass(MainActivity.this, DragRecycleViewActivity.class);
                         break;
                 }
                 startActivity(intent);
             }
         });
 
-        recyclerView.setAdapter(new RecycleviewAdapter(this, list));
-
-//        recyclerView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//            }
-//        });
     }
 
     @Override
