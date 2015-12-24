@@ -25,7 +25,8 @@ public class MainDataUtils {
             "自定义loading对话框",
             "Android Material Design",
             "RecycleView",
-            "DragRecycleView"
+            "DragRecycleView",
+            "底部导航菜单"
     };
 
     public static List<MainDataBean> getListDate() {

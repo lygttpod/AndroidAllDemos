@@ -39,6 +39,7 @@ import com.allen.androidalldemos.recycleview.activity.RecycleViewActivity;
 import com.allen.androidalldemos.recycleview.adapter.ListView_Adapter;
 import com.allen.androidalldemos.sharesdk.ShareActivity;
 import com.allen.androidalldemos.sweetalertdialog.activity.SweetAlertDialogActivity;
+import com.allen.androidalldemos.tabbottom.activity.TabActivity;
 import com.allen.androidalldemos.utils.SPUtils;
 import com.allen.androidalldemos.utils.StringUtil;
 import com.allen.androidalldemos.weather.activity.WeatherActivity;
@@ -155,6 +156,9 @@ public class MainActivity extends AppCompatActivity
                         break;
                     case 17:
                         intent.setClass(MainActivity.this, DragRecycleViewActivity.class);
+                        break;
+                    case 18:
+                        intent.setClass(MainActivity.this, TabActivity.class);
                         break;
                 }
                 startActivity(intent);

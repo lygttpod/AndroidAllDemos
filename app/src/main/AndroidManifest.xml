@@ -69,6 +69,7 @@
             android:label="RecycleViewDemo"
             android:theme="@style/AppTheme"></activity>
         <activity android:name=".recycleview.activity.DragRecycleViewActivity"></activity>
+        <activity android:name=".tabbottom.activity.TabActivity" />
         <!--sharesdk需要的 -->
         <activity
             android:name="com.mob.tools.MobUIShell"
