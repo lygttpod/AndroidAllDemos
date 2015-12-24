@@ -36,8 +36,6 @@
 
 ![](https://github.com/lygttpod/AndroidAllDemos/blob/master/desgin.gif)
 
-![](https://github.com/lygttpod/AndroidAllDemos/blob/master/desgin.gif)
-
 ![](https://github.com/lygttpod/AndroidAllDemos/blob/master/dialog.gif)
 
 ![](https://github.com/lygttpod/AndroidAllDemos/blob/master/gesturelockpsd.gif)
