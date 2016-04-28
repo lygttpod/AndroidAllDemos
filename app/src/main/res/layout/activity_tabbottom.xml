@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
+    <com.allen.androidalldemos.topbar.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        custom:titleText="标题"
+        custom:leftText="左边"
+        custom:leftBackground="@drawable/blue_button_background"
+        custom:leftTextColor="@color/actionsheet_blue"
+        custom:rightText="右边"
+        custom:rightBackground="@drawable/blue_button_background"
+        custom:rightTextColor="@color/actionsheet_blue"
+        custom:titleTextColors="@color/colorAccent"
+        custom:titleTextSize="12sp"/>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tab_bottom"
+        android:layout_below="@+id/topbar"
+        android:orientation="horizontal"/>
 
     <com.allen.androidalldemos.tabbottom.view.TabBottom
         android:id="@+id/tab_bottom"
@@ -11,6 +33,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>

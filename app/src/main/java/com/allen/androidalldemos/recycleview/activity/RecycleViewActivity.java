@@ -7,19 +7,26 @@ import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Adapter;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 
 import com.allen.androidalldemos.R;
+import com.allen.androidalldemos.adapter.RecycleviewAdapter;
 import com.allen.androidalldemos.recycleview.adapter.RecycleView_Grid_Adapter;
 import com.allen.androidalldemos.recycleview.adapter.RecycleView_List_Adapter;
 import com.allen.androidalldemos.recycleview.adapter.RecycleView_Staggered_Adapter;
 import com.allen.androidalldemos.recycleview.bean.DataBean;
 import com.allen.androidalldemos.recycleview.data.Data;
+import com.allen.androidalldemos.recycleview.itemTouchHelper.ItemTouchHelperAdapter;
+import com.allen.androidalldemos.recycleview.itemTouchHelper.SimpleGridItemTouchHelperCallback;
+import com.allen.androidalldemos.recycleview.itemTouchHelper.SimpleItemTouchHelperCallback;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -126,7 +133,7 @@ public class RecycleViewActivity extends AppCompatActivity {
      * @param isVertical
      */
     private void loadListData(boolean isReverse, boolean isVertical) {
-        List<DataBean> dataBeans = new ArrayList<>();
+        final List<DataBean> dataBeans = new ArrayList<>();
         getData(dataBeans);
         //1、设置布局管理器
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -136,9 +143,12 @@ public class RecycleViewActivity extends AppCompatActivity {
         layoutManager.setOrientation(isVertical ? LinearLayoutManager.VERTICAL : LinearLayoutManager.HORIZONTAL);
 
         recyclerView.setLayoutManager(layoutManager);
-
+        final RecycleView_List_Adapter list_adapter = new RecycleView_List_Adapter(this,dataBeans);
         //2.设置适配器
-        recyclerView.setAdapter(new RecycleView_List_Adapter(this, dataBeans));
+        recyclerView.setAdapter(list_adapter);
+
+        //3.滑动删除及拖拽效果
+        list_Drag_Delete(dataBeans,list_adapter);
     }
 
 
@@ -158,8 +168,9 @@ public class RecycleViewActivity extends AppCompatActivity {
         //3.设置垂直布局还是水平布局
         layoutManager.setOrientation(isVertical ? LinearLayoutManager.VERTICAL : LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
+        final RecycleView_Grid_Adapter grid_adapter = new RecycleView_Grid_Adapter(this, dataBeans);
+        recyclerView.setAdapter(grid_adapter);
 
-        recyclerView.setAdapter(new RecycleView_Grid_Adapter(this, dataBeans));
     }
 
     /**
@@ -175,9 +186,38 @@ public class RecycleViewActivity extends AppCompatActivity {
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, isVertical ? StaggeredGridLayoutManager.VERTICAL : StaggeredGridLayoutManager.HORIZONTAL);
         layoutManager.setReverseLayout(isReverse);
         recyclerView.setLayoutManager(layoutManager);
+        final RecycleView_Staggered_Adapter staggered_adapter =new RecycleView_Staggered_Adapter(this, dataBeans);
+        recyclerView.setAdapter(staggered_adapter);
 
-        recyclerView.setAdapter(new RecycleView_Staggered_Adapter(this, dataBeans));
     }
 
+
+    private void list_Drag_Delete(final List<DataBean> dataBean, final RecyclerView.Adapter adapter){
+        ItemTouchHelperAdapter touchHelperAdapter = new ItemTouchHelperAdapter() {
+            @Override
+            public void onItemMove(int fromPosition, int toPosition) {
+                if (fromPosition < toPosition) {
+                    //分别把中间所有的item的位置重新交换
+                    for (int i = fromPosition; i < toPosition; i++) {
+                        Collections.swap(dataBean, i, i + 1);
+                    }
+                } else {
+                    for (int i = fromPosition; i > toPosition; i--) {
+                        Collections.swap(dataBean, i, i - 1);
+                    }
+                }
+                adapter.notifyItemMoved(fromPosition, toPosition);
+            }
+
+            @Override
+            public void onItemDismiss(int position) {
+                dataBean.remove(position);
+                adapter.notifyItemRemoved(position);
+            }
+        };
+        ItemTouchHelper.Callback mCallback = new SimpleItemTouchHelperCallback(touchHelperAdapter);
+        ItemTouchHelper touchHelper = new ItemTouchHelper(mCallback);
+        touchHelper.attachToRecyclerView(recyclerView);
+    }
 
 }

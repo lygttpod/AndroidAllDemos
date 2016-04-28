@@ -1,6 +1,7 @@
 package com.allen.androidalldemos.recycleview.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.allen.androidalldemos.R;
 import com.allen.androidalldemos.recycleview.bean.DataBean;
+import com.allen.androidalldemos.recycleview.itemTouchHelper.ItemTouchHelperViewHolder;
 
 import java.util.List;
 
@@ -48,10 +50,10 @@ public class RecycleView_List_Adapter extends RecyclerView.Adapter<RecycleView_L
         return 0;
     }
 
-    public class ListViewHolder extends RecyclerView.ViewHolder {
+    public class ListViewHolder extends RecyclerView.ViewHolder implements ItemTouchHelperViewHolder {
         ImageView icon;
         TextView title;
-        public ListViewHolder(View itemView) {
+        public ListViewHolder(final View itemView) {
             super(itemView);
             icon = ((ImageView) itemView.findViewById(R.id.item_iv_icon));
             title = ((TextView) itemView.findViewById(R.id.item_tv_title));
@@ -61,6 +63,17 @@ public class RecycleView_List_Adapter extends RecyclerView.Adapter<RecycleView_L
             //设置数据的方法 // TODO: 2015/12/16  
             icon.setImageResource(dataBean.getIcon());
             title.setText(dataBean.getTitle());
+        }
+
+        @Override
+        public void onItemSelected() {
+            itemView.setBackgroundColor(Color.RED);
+        }
+
+        @Override
+        public void onItemClear() {
+            itemView.setBackgroundColor(Color.TRANSPARENT);
+
         }
     }
 }

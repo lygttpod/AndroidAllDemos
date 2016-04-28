@@ -1,6 +1,7 @@
 package com.allen.androidalldemos.recycleview.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.allen.androidalldemos.R;
 import com.allen.androidalldemos.recycleview.bean.DataBean;
+import com.allen.androidalldemos.recycleview.itemTouchHelper.ItemTouchHelperViewHolder;
 
 import java.util.List;
 
@@ -41,7 +43,7 @@ public class RecycleView_Grid_Adapter extends RecyclerView.Adapter<RecycleView_G
         return dataBeans.size();
     }
 
-    public class GridViewHolder extends RecyclerView.ViewHolder {
+    public class GridViewHolder extends RecyclerView.ViewHolder implements ItemTouchHelperViewHolder{
         private ImageView icon;
         private TextView title;
 
@@ -54,6 +56,18 @@ public class RecycleView_Grid_Adapter extends RecyclerView.Adapter<RecycleView_G
         public void setData(DataBean dataBean) {
             icon.setImageResource(dataBean.getIcon());
             title.setText(dataBean.getTitle());
+        }
+
+        @Override
+        public void onItemSelected() {
+            itemView.setBackgroundColor(Color.RED);
+
+        }
+
+        @Override
+        public void onItemClear() {
+            itemView.setBackgroundColor(Color.TRANSPARENT);
+
         }
     }
 }

@@ -47,4 +47,16 @@
         <attr name="indicator_color" format="color" />
     </declare-styleable>
     <!-- loading  end-->
+    <!--topbar-->
+    <declare-styleable name="TopBar">
+        <attr name="titleText" format="string"/>
+        <attr name="titleTextSize" format="dimension"/>
+        <attr name="titleTextColors" format="color"/>
+        <attr name="leftText" format="string"/>
+        <attr name="leftTextColor" format="color"/>
+        <attr name="leftBackground" format="reference|color"/>
+        <attr name="rightText" format="string"/>
+        <attr name="rightTextColor" format="color"/>
+        <attr name="rightBackground" format="reference|color"/>
+    </declare-styleable>
 </resources>
