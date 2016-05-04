@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
-
+                Log.d("allen", "text: git" );
     }
 
     @Override
